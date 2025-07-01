@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shopping list</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>My Shopping List</h1>
+
+  <div class="controls">
+    <button id="toggleList">Hide list</button>
+
+    <div class="description">
+      <input type="text" class="userInput" placeholder="Enter a color">
+      <button class="description">Change list color</button>
+      <p class="description">The list colour is: black</p>
+    </div>
+
+    <div class="addRemove">
+      <input type="text" class="addItemInput" placeholder="Add item">
+      <button class="addItemButton">Add item</button>
+      <button class="removeItemButton">Remove last</button>
+    </div>
+  </div>
+
+  <div class="list">
+    <ul>
+      <li>Bread</li>
+      <li>Milk</li>
+      <li>Cheese</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
