@@ -1,4 +1,4 @@
-// Toggle list visibility
+
 const toggleButton = document.querySelector('#toggleList');
 const listDiv = document.querySelector('.list');
 
@@ -14,7 +14,7 @@ toggleButton.addEventListener('click', () => {
   }
 });
 
-// Change text color of list items
+
 const userInput = document.querySelector('.userInput');
 const colorButton = document.querySelector('button.description');
 const colorDesc = document.querySelector('p.description');
@@ -26,7 +26,6 @@ colorButton.addEventListener('click', () => {
   colorDesc.textContent = 'The list colour is: ' + lastPickedColor;
 });
 
-// Add a new item
 const addItemInput = document.querySelector('.addItemInput');
 const addItemButton = document.querySelector('.addItemButton');
 
@@ -40,7 +39,7 @@ addItemButton.addEventListener('click', () => {
   addItemInput.value = '';
 });
 
-// Remove the last item
+
 const removeItemButton = document.querySelector('.removeItemButton');
 
 removeItemButton.addEventListener('click', () => {
@@ -49,7 +48,7 @@ removeItemButton.addEventListener('click', () => {
   if (last) ul.removeChild(last);
 });
 
-// Change case on hover
+
 listDiv.addEventListener('mouseover', e => {
   if (e.target.tagName === 'LI') {
     e.target.style.textTransform = 'uppercase';
