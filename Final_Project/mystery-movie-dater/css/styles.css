@@ -1,9 +1,16 @@
 /* styles.css */
 
+/* Updated color palette for WCAG AA+ accessibility & SEO-friendly contrast */
 :root {
-  --primary: #881c30;
-  --secondary: #10263b;
-  --accent: #f8efe2;
+  /* Darker, richer brand red for better button contrast */
+  --primary: #7a1330; /* was #881c30 */
+
+  /* Darker navy background for stronger text contrast */
+  --secondary: #0d2236; /* was #10263b */
+
+  /* Slightly warmer, high-contrast cream for text */
+  --accent: #faf3e6; /* was #f8efe2 */
+
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Montserrat', sans-serif;
 }
@@ -36,7 +43,7 @@ main, form {
   padding: 2rem;
   margin: auto;
   max-width: 450px;
-  background: rgba(16,38,59,.7);
+  background: rgba(13,34,54,0.7); /* adjusted for better contrast */
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,.12);
 }
@@ -52,6 +59,14 @@ input, select, textarea, button {
   outline: none;
 }
 
+/* Restore native dropdown arrows & pointer cursor */
+select {
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+  cursor: pointer;
+}
+
 button {
   background: var(--primary);
   color: var(--accent);
@@ -61,7 +76,7 @@ button {
 }
 
 button:hover {
-  background: #a03246;
+  background: #922841; /* darker hover for improved visibility */
 }
 
 label {
@@ -70,14 +85,14 @@ label {
 }
 
 a {
-  color: var(--accent);
+  color: #ffd27f; /* golden link color with strong contrast */
   text-decoration: underline;
 }
 
 #movieMatch, #upcomingDates, #history, #reviewStatus, #revealedReview {
   margin: 2rem 0;
   padding: 1rem;
-  background: rgba(136,28,48,.08);
+  background: rgba(122,19,48,0.15); /* deeper tint for readability */
   border-radius: 8px;
 }
 
