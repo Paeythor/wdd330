@@ -17,3 +17,9 @@
   from { transform: translateY(32px); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
 }
+select {
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+  cursor: pointer; /* for clarity */
+}
