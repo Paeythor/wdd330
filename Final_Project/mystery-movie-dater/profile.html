@@ -10,6 +10,26 @@
     <h1>Profile Setup</h1>
     <form id="profileForm">
 
+      <!-- Name -->
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" placeholder="Your name" required>
+
+      <!-- Email -->
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <!-- Height -->
+      <label for="selfHeight">Your Height (cm)</label>
+      <input type="number" id="selfHeight" min="100" max="250" required>
+
+      <!-- Preferred Height Range -->
+      <label>Preferred Match Height Range (cm)</label>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <input type="number" id="matchHeightMin" min="100" max="250" required>
+        <span style="color:#fff;">to</span>
+        <input type="number" id="matchHeightMax" min="100" max="250" required>
+      </div>
+
       <!-- Your Age -->
       <label for="selfAge">Your Age</label>
       <select id="selfAge" required></select>
