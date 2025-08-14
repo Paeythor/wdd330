@@ -1,0 +1,19 @@
+/* animate.css - minimal example */
+
+.fade-in {
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideup 1s;
+}
+
+@keyframes slideup {
+  from { transform: translateY(32px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
