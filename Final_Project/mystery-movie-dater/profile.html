@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Setup</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Profile Setup</h1>
+    <form id="profileForm">
+
+      <!-- Your Age -->
+      <label for="selfAge">Your Age</label>
+      <select id="selfAge" required></select>
+
+      <!-- Preferred Match Age Range -->
+      <label>Preferred Match Age Range</label>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <select id="matchAgeMin" required></select>
+        <span style="color:#fff;">to</span>
+        <select id="matchAgeMax" required></select>
+      </div>
+
+      <!-- Your Gender -->
+      <label for="selfGender">Your Gender</label>
+      <select id="selfGender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <!-- Preferred Match Gender -->
+      <label for="matchGender">Preferred Match Gender</label>
+      <select id="matchGender" required>
+        <option value="any">Any</option>
+        <option value="male">Male only</option>
+        <option value="female">Female only</option>
+      </select>
+
+      <!-- Favorite Genres -->
+      <label for="genres">Favorite Genres</label>
+      <select multiple id="genres"></select>
+
+      <!-- Availability -->
+      <label for="availability">Availability</label>
+      <input type="text" id="availability" placeholder="e.g. evenings, weekends">
+
+      <!-- Location -->
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="City or Region">
+
+      <button type="submit">Save Profile</button>
+    </form>
+  </main>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>
