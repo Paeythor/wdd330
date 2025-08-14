@@ -1,6 +1,32 @@
 // profile.js
 
-// Populate ages
+// Compatibility check — Age + Height + Gender
+function isCompatible(userProfile, candidateProfile) {
+  // Age preference match (both ways)
+  const ageOk =
+    candidateProfile.selfAge >= userProfile.matchAgeMin &&
+    candidateProfile.selfAge <= userProfile.matchAgeMax &&
+    userProfile.selfAge >= candidateProfile.matchAgeMin &&
+    userProfile.selfAge <= candidateProfile.matchAgeMax;
+
+  // Height preference match (both ways)
+  const heightOk =
+    candidateProfile.selfHeight >= userProfile.matchHeightMin &&
+    candidateProfile.selfHeight <= userProfile.matchHeightMax &&
+    userProfile.selfHeight >= candidateProfile.matchHeightMin &&
+    userProfile.selfHeight <= candidateProfile.matchHeightMax;
+
+  // Gender preference match (both ways)
+  const genderOk =
+    (userProfile.matchGender === "any" || candidateProfile.selfGender === userProfile.matchGender) &&
+    (candidateProfile.matchGender === "any" || userProfile.selfGender === candidateProfile.matchGender);
+
+  // Only compatible if all conditions are true
+  return ageOk && heightOk && genderOk;
+}
+
+// =====================================================
+// Populate ages (18–50)
 function populateAges(selectElem) {
   for (let i = 18; i <= 50; i++) {
     const opt = document.createElement('option');
@@ -30,19 +56,20 @@ if (document.getElementById('genres')) {
     genresList.map(g => `<option value="${g.id}">${g.name}</option>`).join('');
 }
 
+// Handle profile form submit
 document.getElementById("profileForm")?.addEventListener("submit", e => {
   e.preventDefault();
 
-  // Get base login email (or use entered email if new)
+  // Get base login email (or use entered email if new user)
   let loginEmail = localStorage.getItem("mm_logged_in");
   const enteredEmail = document.getElementById("email").value.trim();
 
   if (!loginEmail) {
-    loginEmail = enteredEmail; // new signup
+    loginEmail = enteredEmail; // first-time signup
     localStorage.setItem("mm_logged_in", loginEmail);
   }
 
-  // Read all fields
+  // Read all fields from form
   const profile = {
     fullName: document.getElementById("fullName").value.trim(),
     email: enteredEmail,
@@ -69,7 +96,8 @@ document.getElementById("profileForm")?.addEventListener("submit", e => {
     return;
   }
 
-  // Save
+  // Save to localStorage
   localStorage.setItem("mm_profile_" + loginEmail, JSON.stringify(profile));
+
   window.location.href = "dashboard.html";
 });
